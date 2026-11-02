@@ -1,1 +1,133 @@
-   <h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adetola Samuel | Data Analyst</title>
+<meta name="description" content="Portfolio of Adetola Samuel, a data analyst in Lagos working with Excel, SQL and Power BI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5f8f7; --ink:#14232b; --muted:#4d5f66; --line:#cfdad8;
+  --teal:#1f6f78; --teal-soft:#dcebec; --amber:#b9791a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:"Newsreader",Georgia,serif;line-height:1.2;margin:0}
+nav{border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:22px;align-items:center;padding-top:16px;padding-bottom:16px;flex-wrap:wrap}
+nav strong{margin-right:auto;font-weight:600}
+nav a{text-decoration:none;color:var(--ink)}
+nav a:hover{color:var(--teal)}
+.hero{padding:64px 0 48px}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);max-width:17ch}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:56ch;margin:18px 0 0}
+.chart{margin-top:38px;background:#fff;border:1px solid var(--line);padding:22px 22px 14px}
+.chart h2{font-size:1.15rem}
+.chart small{display:block;color:var(--muted);margin:2px 0 14px}
+.bar{display:grid;grid-template-columns:110px 1fr 100px;gap:12px;align-items:center;margin:7px 0;font-size:.92rem}
+.bar i{display:block;height:14px;background:var(--teal);border-radius:2px}
+.bar:nth-child(-n+5) i{background:var(--teal)}
+.bar:nth-child(n+8) i{background:#8fb5b9}
+.bar span:last-child{text-align:right;font-variant-numeric:tabular-nums}
+section{padding:46px 0;border-top:1px solid var(--line)}
+section h2{font-size:1.7rem;margin-bottom:16px}
+.skills{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none;margin:18px 0 0}
+.skills li{background:var(--teal-soft);padding:5px 14px;border-radius:99px;font-weight:500;font-size:.95rem}
+.project h3{font-size:1.35rem;margin:26px 0 8px}
+.project img{width:100%;height:auto;border:1px solid var(--line);margin:18px 0;background:#fff}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:18px 0;padding:0;list-style:none}
+.facts li{border-left:4px solid var(--teal);padding:4px 0 4px 14px}
+.facts b{display:block;font-family:"Newsreader",Georgia,serif;font-size:1.5rem}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.links a{border:2px solid var(--teal);padding:8px 16px;text-decoration:none;font-weight:600}
+.links a:hover{background:var(--teal);color:#fff}
+.note{color:var(--muted);font-size:.92rem}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:.92rem}
+@media(max-width:560px){.bar{grid-template-columns:90px 1fr 82px;font-size:.85rem}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <strong>Adetola Samuel</strong>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <h1>I turn sales data into clear decisions.</h1>
+  <p class="lead">I am a data analyst based in Lagos, Nigeria. I clean messy data, query it with SQL, and show the results in Excel and Power BI dashboards that people can understand at a glance.</p>
+
+  <div class="chart" role="img" aria-label="Bar chart of revenue by product. Monitor is highest at 7,992,000 and Mouse is lowest at 235,200.">
+    <h2>Revenue by product, January to June 2026</h2>
+    <small>From my sales analysis project below. Electronics products make up the top four.</small>
+    <div class="bar"><span>Monitor</span><i style="width:100%"></i><span>7,992,000</span></div>
+    <div class="bar"><span>Printer</span><i style="width:88.9%"></i><span>7,104,000</span></div>
+    <div class="bar"><span>Laptop</span><i style="width:82.2%"></i><span>6,570,000</span></div>
+    <div class="bar"><span>Tablet</span><i style="width:81.5%"></i><span>6,512,000</span></div>
+    <div class="bar"><span>Desk</span><i style="width:77.3%"></i><span>6,174,000</span></div>
+    <div class="bar"><span>External Drive</span><i style="width:55.2%"></i><span>4,410,000</span></div>
+    <div class="bar"><span>Headset</span><i style="width:23.1%"></i><span>1,850,000</span></div>
+    <div class="bar"><span>Office Chair</span><i style="width:17.6%"></i><span>1,406,000</span></div>
+    <div class="bar"><span>Keyboard</span><i style="width:13.9%"></i><span>1,110,000</span></div>
+    <div class="bar"><span>Mouse</span><i style="width:2.9%"></i><span>235,200</span></div>
+  </div>
+</div></header>
+
+<main>
+<section id="about"><div class="wrap">
+  <h2>About me</h2>
+  <p>I work as a Data Analyst at Techbridge, and I earlier worked as a Data Analyst at DecodeLabs. I hold a B.A. in English and French from the University of Ibadan, which helps me explain numbers in plain words. I speak English, Yoruba and French.</p>
+  <ul class="skills" aria-label="Skills">
+    <li>Excel</li><li>Google Sheets</li><li>SQL (PostgreSQL)</li><li>Power BI</li><li>Pivot tables</li><li>Data cleaning</li><li>Reporting</li>
+  </ul>
+</div></section>
+
+<section id="projects" class="project"><div class="wrap">
+  <h2>Projects</h2>
+  <h3>Sales performance analysis</h3>
+  <p><b>The question:</b> Which products, cities and customers bring in the most revenue, and when do sales rise and fall?</p>
+  <p><b>Tools:</b> Excel (VLOOKUP and pivot tables), PostgreSQL (joins, GROUP BY, SUM and AVG), Power BI (dashboard).</p>
+
+  <img src="dashboard.png" alt="Power BI sales dashboard with four summary numbers, revenue by product, by category, by city and a monthly revenue line.">
+
+  <h3>How I did it</h3>
+  <p>I joined three tables (customers, products and transactions) into one, worked out revenue after discounts as quantity × unit price × (1 − discount), and checked the totals in Excel and SQL until they matched. Then I built a dashboard in Power BI with four summary numbers and four charts.</p>
+
+  <h3>What I found</h3>
+  <ul class="facts">
+    <li><b>43,363,200</b>total revenue from 149 sales</li>
+    <li><b>58.8%</b>of revenue comes from Electronics</li>
+    <li><b>48%</b>of sales come from Kano, Abuja and Lagos</li>
+    <li><b>43.8%</b>of revenue comes from just five customers</li>
+  </ul>
+  <p>Sales were strong in January, March and May (about 9,000,000 each) and weak in February, April and June (about 5,300,000 each). The number of sales stayed near 25 a month, so the swings came from the size of the orders. Accessories were 40% of the items sold but only 7.4% of the money.</p>
+
+  <h3>What I would recommend</h3>
+  <p>Keep the top Electronics products in stock, sell accessories together with big items, run offers in the slow months, and look after the top customers while finding new ones.</p>
+
+  <p class="note">Data notes: one transaction with a product that does not exist in the product list was left out, and one order recorded as -2 items was treated as 2 items because it looked like a data entry mistake.</p>
+
+  <div class="links">
+    <a href="report.pdf">Read the report</a>
+    <a href="sales-queries.sql">See the SQL queries</a>
+    <a href="sales-analysis.xlsx">Download the Excel workbook</a>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <p>I am open to data analyst roles and freelance projects. Write to me at <a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a> or find me on <a href="https://www.linkedin.com/in/YOUR-LINKEDIN">LinkedIn</a>.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">Adetola Samuel, Lagos, Nigeria</div></footer>
+</body>
+</html>
