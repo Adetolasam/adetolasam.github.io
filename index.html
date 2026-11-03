@@ -3,131 +3,187 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Adetola Samuel | Data Analyst</title>
-<meta name="description" content="Portfolio of Adetola Samuel, a Data Analyst in Lagos working with Excel, SQL and Power BI.">
+<title>Adetola Temitope Samuel | Data Analyst</title>
+<meta name="description" content="Portfolio of Adetola Temitope Samuel, a Data Analyst in Lagos working with Excel, SQL and Power BI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --paper:#f5f8f7; --ink:#14232b; --muted:#4d5f66; --line:#cfdad8;
-  --teal:#1f6f78; --teal-soft:#dcebec; --amber:#b9791a;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+:root{--paper:#f5f8f7;--ink:#14232b;--muted:#4d5f66;--line:#cfdad8;--teal:#1f6f78;--soft:#dcebec;--amber:#b9791a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 "IBM Plex Sans",system-ui,sans-serif}
-a{color:var(--teal)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
-.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+a{color:var(--teal)}a:focus-visible,summary:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px}
 h1,h2,h3{font-family:"Newsreader",Georgia,serif;line-height:1.2;margin:0}
-nav{border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;gap:22px;align-items:center;padding-top:16px;padding-bottom:16px;flex-wrap:wrap}
-nav strong{margin-right:auto;font-weight:600}
-nav a{text-decoration:none;color:var(--ink)}
-nav a:hover{color:var(--teal)}
-.hero{padding:64px 0 48px}
-.hero h1{font-size:clamp(2rem,5vw,3.2rem);max-width:17ch}
-.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:56ch;margin:18px 0 0}
-.chart{margin-top:38px;background:#fff;border:1px solid var(--line);padding:22px 22px 14px}
-.chart h2{font-size:1.15rem}
-.chart small{display:block;color:var(--muted);margin:2px 0 14px}
-.bar{display:grid;grid-template-columns:110px 1fr 100px;gap:12px;align-items:center;margin:7px 0;font-size:.92rem}
-.bar i{display:block;height:14px;background:var(--teal);border-radius:2px}
-.bar:nth-child(-n+5) i{background:var(--teal)}
-.bar:nth-child(n+8) i{background:#8fb5b9}
-.bar span:last-child{text-align:right;font-variant-numeric:tabular-nums}
+nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:5}
+nav .wrap{display:flex;gap:20px;align-items:center;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+nav strong{margin-right:auto}nav a{text-decoration:none;color:var(--ink)}nav a:hover{color:var(--teal)}
+.hero{padding:60px 0 44px}.hero h1{font-size:clamp(2rem,5vw,3.2rem);max-width:18ch}
+.lead{font-size:1.15rem;color:var(--muted);max-width:58ch;margin:18px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none;margin:20px 0 0}
+.chips li{background:var(--soft);padding:5px 14px;border-radius:99px;font-weight:500;font-size:.95rem}
 section{padding:46px 0;border-top:1px solid var(--line)}
-section h2{font-size:1.7rem;margin-bottom:16px}
-.skills{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none;margin:18px 0 0}
-.skills li{background:var(--teal-soft);padding:5px 14px;border-radius:99px;font-weight:500;font-size:.95rem}
-.project h3{font-size:1.35rem;margin:26px 0 8px}
-.project img{width:100%;height:auto;border:1px solid var(--line);margin:18px 0;background:#fff}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:18px 0;padding:0;list-style:none}
-.facts li{border-left:4px solid var(--teal);padding:4px 0 4px 14px}
-.facts b{display:block;font-family:"Newsreader",Georgia,serif;font-size:1.5rem}
-.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
-.links a{border:2px solid var(--teal);padding:8px 16px;text-decoration:none;font-weight:600}
-.links a:hover{background:var(--teal);color:#fff}
-.note{color:var(--muted);font-size:.92rem}
+section h2{font-size:1.8rem;margin-bottom:14px}h3{font-size:1.3rem;margin:30px 0 8px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:22px 0;padding:0;list-style:none}
+.kpis li{background:#fff;border:1px solid var(--line);border-left:5px solid var(--teal);padding:12px 16px;border-radius:6px}
+.kpis li:first-child{border-left-color:var(--amber)}
+.kpis b{display:block;font-family:"Newsreader",Georgia,serif;font-size:1.75rem}.kpis span{color:var(--muted);font-size:.92rem}
+.chart{background:#fff;border:1px solid var(--line);padding:20px 22px 12px;border-radius:6px}
+.bar{display:grid;grid-template-columns:110px 1fr 96px;gap:12px;align-items:center;margin:7px 0;font-size:.92rem}
+.bar i{display:block;height:14px;background:var(--teal);border-radius:2px}.bar.lo i{background:#8fb5b9}.bar span:last-child{text-align:right}
+img{max-width:100%;height:auto;border:1px solid var(--line);background:#fff;border-radius:6px}
+figure{margin:18px 0}figcaption{color:var(--muted);font-size:.9rem;margin-top:6px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+ol,ul.plain{padding-left:1.2rem}li{margin:6px 0}
+details{background:#fff;border:1px solid var(--line);border-radius:6px;margin:12px 0;padding:4px 18px}
+summary{cursor:pointer;font-weight:600;padding:12px 0}
+pre{background:#14232b;color:#e6f1f1;padding:14px;overflow-x:auto;font-size:.85rem;line-height:1.5;border-radius:6px}
+.say{border-left:4px solid var(--amber);padding:2px 0 2px 14px;margin:14px 0}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.links a{border:2px solid var(--teal);padding:8px 16px;text-decoration:none;font-weight:600;border-radius:4px}
+.links a:hover{background:var(--teal);color:#fff}.note{color:var(--muted);font-size:.92rem}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:.92rem}
-@media(max-width:560px){.bar{grid-template-columns:90px 1fr 82px;font-size:.85rem}}
+@media(max-width:560px){.bar{grid-template-columns:92px 1fr 80px;font-size:.85rem}}
 </style>
 </head>
 <body>
-<nav><div class="wrap">
-  <strong>Adetola Samuel</strong>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</div></nav>
+<nav><div class="wrap"><strong>Adetola Temitope Samuel</strong><a href="#about">About</a><a href="#project">Project</a><a href="#sql">SQL work</a><a href="#contact">Contact</a></div></nav>
 
 <header class="hero"><div class="wrap">
-  <h1>I turn Sales Data into clear decisions.</h1>
-  <p class="lead">I am a Data Analyst based in Lagos, Nigeria. I clean messy data, query it with SQL, and show the results in Excel and Power BI dashboards that people can understand at a glance.</p>
-
-  <div class="chart" role="img" aria-label="Bar chart of revenue by product. Monitor is highest at 7,992,000 and Mouse is lowest at 235,200.">
-    <h2>Revenue by product, January to June 2026</h2>
-    <small>From my sales analysis project below. Electronics products make up the top four.</small>
-    <div class="bar"><span>Monitor</span><i style="width:100%"></i><span>7,992,000</span></div>
-    <div class="bar"><span>Printer</span><i style="width:88.9%"></i><span>7,104,000</span></div>
-    <div class="bar"><span>Laptop</span><i style="width:82.2%"></i><span>6,570,000</span></div>
-    <div class="bar"><span>Tablet</span><i style="width:81.5%"></i><span>6,512,000</span></div>
-    <div class="bar"><span>Desk</span><i style="width:77.3%"></i><span>6,174,000</span></div>
-    <div class="bar"><span>External Drive</span><i style="width:55.2%"></i><span>4,410,000</span></div>
-    <div class="bar"><span>Headset</span><i style="width:23.1%"></i><span>1,850,000</span></div>
-    <div class="bar"><span>Office Chair</span><i style="width:17.6%"></i><span>1,406,000</span></div>
-    <div class="bar"><span>Keyboard</span><i style="width:13.9%"></i><span>1,110,000</span></div>
-    <div class="bar"><span>Mouse</span><i style="width:2.9%"></i><span>235,200</span></div>
-  </div>
+<h1>I turn Sales Data into clear decisions.</h1>
+<p class="lead">I am a Data Analyst in Lagos, Nigeria. I clean messy data, query it with SQL, and show the answers in Excel and Power BI dashboards that anyone can read at a glance.</p>
+<ul class="chips"><li>Excel and Google Sheets</li><li>SQL (PostgreSQL)</li><li>Power BI</li><li>Data cleaning</li><li>Dashboards and reporting</li></ul>
 </div></header>
 
 <main>
 <section id="about"><div class="wrap">
-  <h2>About Me</h2>
-  <p>I work as a Data Analyst at Techbridge, and I earlier worked as a Data Analyst at DecodeLabs. I hold a B.A. in English and French from the University of Ibadan, which helps me explain numbers in plain words. I speak English, Yoruba and French.</p>
-  <ul class="skills" aria-label="Skills">
-    <li>Excel</li><li>Google Sheets</li><li>SQL (PostgreSQL)</li><li>Power BI</li><li>Pivot tables</li><li>Data cleaning</li><li>Reporting</li>
-  </ul>
+<h2>About me</h2>
+<p>I work as a Data Analyst at Techbridge, and I earlier worked as a Data Analyst at DecodeLabs. I hold a B.A. in English and French from the University of Ibadan, which helps me explain numbers in plain words. I speak English, Yoruba and French.</p>
 </div></section>
 
-<section id="projects" class="project"><div class="wrap">
-  <h2>Projects</h2>
-  <h3>Sales Performance Analysis</h3>
-  <p><b>The question:</b> Which products, cities and customers bring in the most revenue, and when do sales rise and fall?</p>
-  <p><b>Tools:</b> Excel (VLOOKUP and pivot tables), PostgreSQL (joins, GROUP BY, SUM and AVG), Power BI (dashboard).</p>
+<section id="project"><div class="wrap">
+<h2>Retail Sales Performance Analysis</h2>
+<p class="note">Techbridge Services, Task 8. Sample sales data, January to June 2026. Tools: Excel and Google Sheets, PostgreSQL, Power BI.</p>
 
-  <img src="dashboard.png" alt="Power BI sales dashboard with four summary numbers, revenue by product, by category, by city and a monthly revenue line.">
+<h3>The questions</h3>
+<p>How much money did the business make? Which products, categories, cities and customers brought in the most? Which type of customer buys the most? How did sales move month by month?</p>
 
-  <h3>How I did it</h3>
-  <p>I joined three tables (customers, products and transactions) into one, worked out revenue after discounts as quantity × unit price × (1 − discount), and checked the totals in Excel and SQL until they matched. Then I built a dashboard in Power BI with four summary numbers and four charts.</p>
+<ul class="kpis">
+<li><b>43,363,200</b><span>total revenue after discounts</span></li>
+<li><b>149</b><span>transactions</span></li>
+<li><b>450</b><span>units sold</span></li>
+<li><b>291,028</b><span>average sale</span></li>
+</ul>
 
-  <h3>What I found</h3>
-  <ul class="facts">
-    <li><b>43,363,200</b>total revenue from 149 sales</li>
-    <li><b>58.8%</b>of revenue comes from Electronics</li>
-    <li><b>48%</b>of sales come from Kano, Abuja and Lagos</li>
-    <li><b>43.8%</b>of revenue comes from just five customers</li>
-  </ul>
-  <p>Sales were strong in January, March and May (about 9,000,000 each) and weak in February, April and June (about 5,300,000 each). The number of sales stayed near 25 a month, so the swings came from the size of the orders. Accessories were 40% of the items sold but only 7.4% of the money.</p>
+<figure><img src="dashboard.png" alt="Sales dashboard with four key numbers, revenue by product, category, city and month." width="1920" height="1080"><figcaption>The Power BI dashboard.</figcaption></figure>
 
-  <h3>What I would recommend</h3>
-  <p>Keep the top Electronics products in stock, sell accessories together with big items, run offers in the slow months, and look after the top customers while finding new ones.</p>
+<h3>The data</h3>
+<p>Three tables: Customers, Products and Transactions. Product ID links Transactions to Products, and Customer ID links Transactions to Customers. I merged all three into one sheet so every sale carried its price, product, customer, city and customer type.</p>
 
-  <p class="note">Data notes: one transaction with a product that does not exist in the product list was left out, and one order recorded as -2 items was treated as 2 items because it looked like a data entry mistake.</p>
+<h3>How I cleaned it</h3>
+<ol>
+<li>Merged the three sheets with VLOOKUP, and used IFERROR to label missing matches as "NOT FOUND".</li>
+<li>Found one sale whose customer is not in the customer list. It is kept in revenue and shown as "NOT FOUND".</li>
+<li>Found one sale whose product is not in the product list, so its price and revenue could not be worked out. I left it out of every total.</li>
+<li>Trimmed a stray double space in one column.</li>
+<li>Corrected one order with a negative quantity, because a quantity cannot be below zero.</li>
+<li>Calculated revenue as quantity × unit price, then took off the discount to get Total Revenue.</li>
+<li>Added a Month column with the TEXT function so I could study monthly sales.</li>
+</ol>
 
-  <div class="links">
-    <a href="report.pdf">Read the report</a>
-    <a href="sales-queries.sql">See the SQL queries</a>
-    <a href="sales-analysis.xlsx">Download the Excel workbook</a>
-  </div>
+<h3>What the data shows</h3>
+<div class="chart" role="img" aria-label="Revenue by product: Monitor 7,992,000 is highest, Mouse 235,200 is lowest.">
+<b>Revenue by product</b>
+<div class="bar"><span>Monitor</span><i style="width:100%"></i><span>7,992,000</span></div>
+<div class="bar"><span>Printer</span><i style="width:88.9%"></i><span>7,104,000</span></div>
+<div class="bar"><span>Laptop</span><i style="width:82.2%"></i><span>6,570,000</span></div>
+<div class="bar"><span>Tablet</span><i style="width:81.5%"></i><span>6,512,000</span></div>
+<div class="bar"><span>Desk</span><i style="width:77.3%"></i><span>6,174,000</span></div>
+<div class="bar lo"><span>External Drive</span><i style="width:55.2%"></i><span>4,410,000</span></div>
+<div class="bar lo"><span>Headset</span><i style="width:23.1%"></i><span>1,850,000</span></div>
+<div class="bar lo"><span>Office Chair</span><i style="width:17.6%"></i><span>1,406,000</span></div>
+<div class="bar lo"><span>Keyboard</span><i style="width:13.9%"></i><span>1,110,000</span></div>
+<div class="bar lo"><span>Mouse</span><i style="width:2.9%"></i><span>235,200</span></div>
+</div>
+<ol>
+<li><b>Electronics makes the most money.</b> It earned 25,484,000 (58.8%), more than the other three categories combined. Monitor, Printer, Laptop and Tablet alone bring in about 65%.</li>
+<li><b>Three cities bring in nearly half.</b> Kano (7,222,000), Abuja (7,071,000) and Lagos (6,473,250) make up about 48%. Lagos has the most sales (21), but its average sale (308,250) is lower than Kano's (451,375).</li>
+<li><b>Sales rise and fall by month.</b> January (9,642,250), May (9,167,500) and March (8,660,250) were strong. February, April and June were near 5,300,000. The number of sales stayed near 25 a month, so the swings come from the size of the orders.</li>
+<li><b>Cheap items sell a lot but earn little.</b> Accessories are 40% of the items sold but only 7.4% of the money.</li>
+<li><b>Customer types:</b> Retail earned 23,975,850 (55.3%), Corporate 16,320,350 (37.6%) and Wholesale 2,617,000 (6.0%). Wholesale buyers purchase often but spend only about 90,241 a time.</li>
+<li><b>A few customers matter a lot.</b> The top five bring in 19,000,000 (43.8%), led by Ibrahim Sani (Abuja) with 4,716,000.</li>
+</ol>
+
+<h3>What I would recommend</h3>
+<ol>
+<li>Keep Monitors, Printers, Laptops and Tablets well stocked and promote them most.</li>
+<li>Sell accessories together with big items to raise the value of each order.</li>
+<li>Run offers in February, April and June to lift the slow months.</li>
+<li>Reward the top customers and keep finding new ones.</li>
+<li>Look at wholesale prices and the products wholesale buyers choose.</li>
+</ol>
+<div class="links"><a href="report.pdf">Read the full report</a><a href="sales-analysis.xlsx">Excel workbook</a><a href="sales-queries.sql">All SQL queries</a></div>
+</div></section>
+
+<section id="sql"><div class="wrap">
+<h2>SQL work</h2>
+<p>I used PostgreSQL to answer five business questions. Each query joins the tables, groups the rows and adds up revenue as quantity × unit price × (1 − discount). I used an inner join, so the two sales with unknown codes are left out of some results. Tap a question to see the query and its result.</p>
+
+<details><summary>1. What is the total revenue of each product?</summary>
+<pre>select p.product_name, p.product_id,
+sum(t.quantity * p.unit_price * (1 - t.discount)) as total_revenue
+from transactions as t
+join products as p on t.product_id = p.product_id
+group by p.product_name, p.product_id
+order by total_revenue desc;</pre>
+<p class="say">Monitor leads with 7,992,000, then Printer with 7,104,000. Mouse is lowest with 235,200.</p>
+<img src="sql-q1.png" alt="Query result: revenue by product" loading="lazy"></details>
+
+<details><summary>2. Which product category earned the most?</summary>
+<pre>select p.category,
+sum(t.quantity * p.unit_price * (1 - t.discount)) as total_revenue
+from transactions as t
+join products as p on t.product_id = p.product_id
+group by p.category
+order by total_revenue desc;</pre>
+<p class="say">Electronics earned 25,484,000. Accessories earned the least, 3,195,200.</p>
+<img src="sql-q2.png" alt="Query result: revenue by category" loading="lazy"></details>
+
+<details><summary>3. Which customers brought in the most revenue?</summary>
+<pre>select c.customer_name, c.customer_id,
+sum(t.quantity * p.unit_price * (1 - t.discount)) as total_revenue
+from transactions as t
+join customers as c on t.customer_id = c.customer_id
+join products as p on t.product_id = p.product_id
+group by c.customer_name, c.customer_id
+order by total_revenue desc;</pre>
+<p class="say">Ibrahim Sani is first with 4,716,000, then Hauwa Ali with 3,768,000 and Tunde Adebayo with 3,726,000. Kelvin George is lowest with 109,600.</p>
+<img src="sql-q3.png" alt="Query result: revenue by customer" loading="lazy"></details>
+
+<details><summary>4. Which city earned the most?</summary>
+<pre>select c.city,
+sum(t.quantity * p.unit_price * (1 - t.discount)) as total_revenue
+from transactions as t
+join customers as c on t.customer_id = c.customer_id
+join products as p on t.product_id = p.product_id
+group by c.city
+order by total_revenue desc;</pre>
+<p class="say">Kano earned 7,222,000. Enugu earned the least, 125,600.</p>
+<img src="sql-q4.png" alt="Query result: revenue by city" loading="lazy"></details>
+
+<details><summary>5. What is the average transaction value?</summary>
+<pre>select avg(t.quantity * p.unit_price * (1 - t.discount)) as avg_transaction_value
+from transactions as t
+join products as p on t.product_id = p.product_id;</pre>
+<p class="say">The average sale is about 291,028.</p>
+<img src="sql-q5.png" alt="Query result: average transaction value" loading="lazy"></details>
 </div></section>
 
 <section id="contact"><div class="wrap">
-  <h2>Contact</h2>
-  <p>   I am open to Data Analyst roles and freelance projects. Write to me at <a href="mailto:temitopeadetola48@gmail.com">temitopeadetola48@gmail.com</a> or find me on <a href="https://www.linkedin.com/in/samuel-adetola-temitope-9a094b239/">LinkedIn</a>.</p>
-   </div></section>
+<h2>Contact</h2>
+<p>I am open to Data Analyst roles and Freelance projects. Write to me at <a href="mailto:temitopeadetola48@gmail.com">temitopeadetola48@gmail.com</a> or find me on <a href="https://www.linkedin.com/in/samuel-adetola-temitope-9a094b239/">LinkedIn</a>.</p>
+</div></section>
 </main>
-
-<footer><div class="wrap">Adetola Samuel, Lagos, Nigeria</div></footer>
+<footer><div class="wrap">Adetola Temitope Samuel, Lagos, Nigeria</div></footer>
 </body>
 </html>
