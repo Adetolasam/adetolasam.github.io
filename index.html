@@ -44,21 +44,29 @@ pre{background:#14232b;color:#e6f1f1;padding:14px;overflow-x:auto;font-size:.85r
 .links a:hover{background:var(--teal);color:#fff}.note{color:var(--muted);font-size:.92rem}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:.92rem}
 @media(max-width:560px){.bar{grid-template-columns:92px 1fr 80px;font-size:.85rem}}
+.btn{display:inline-block;background:var(--teal);color:#fff;padding:10px 20px;border-radius:4px;font-weight:600;text-decoration:none;border:2px solid var(--teal)}
+.btn:hover{background:#17565d}.btn.alt{background:transparent;color:var(--teal)}.btn.alt:hover{background:var(--teal);color:#fff}
+.cv-actions{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 8px}
+.cv-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:8px 24px 18px}
+.cv-card h3{margin:22px 0 6px;font-size:1.15rem;color:var(--teal)}
+.cv-card h4{margin:14px 0 2px;font-size:1.02rem}.cv-card ul{margin:4px 0;padding-left:1.2rem}
+.cv-card p{margin:6px 0}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><strong>Adetola Temitope Samuel</strong><a href="#about">About</a><a href="#project">Project</a><a href="#sql">SQL work</a><a href="#contact">Contact</a></div></nav>
+<nav><div class="wrap"><strong>Adetola Temitope Samuel</strong><a href="#about">About</a><a href="#project">Project</a><a href="#sql">SQL work</a><a href="#cv">CV</a><a href="#contact">Contact</a></div></nav>
 
 <header class="hero"><div class="wrap">
 <h1>I turn Sales Data into clear decisions.</h1>
 <p class="lead">I am a Data Analyst in Lagos, Nigeria. I clean messy data, query it with SQL, and show the answers in Excel and Power BI dashboards that anyone can read at a glance.</p>
 <ul class="chips"><li>Excel and Google Sheets</li><li>SQL (PostgreSQL)</li><li>Power BI</li><li>Data cleaning</li><li>Dashboards and reporting</li></ul>
+<p style="margin-top:22px"><a class="btn" href="cv.pdf">Download my CV</a></p>
 </div></header>
 
 <main>
 <section id="about"><div class="wrap">
-<h2>About Me</h2>
-<p>I worked as a Data Analyst Intern at Techbridge, and I earlier worked as a Data Analyst Intern at DecodeLabs. I hold a B.A. in English and French from the University of Ibadan, which helps me explain numbers in plain words. I speak English, Yoruba and French.</p>
+<h2>About me</h2>
+<p>I work as a Data Analyst at Techbridge, and I earlier worked as a Data Analyst at DecodeLabs. I hold a B.A. in English and French from the University of Ibadan, which helps me explain numbers in plain words. I speak English, Yoruba and French.</p>
 </div></section>
 
 <section id="project"><div class="wrap">
@@ -77,7 +85,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 
 <figure><img src="dashboard.png" alt="Sales dashboard with four key numbers, revenue by product, category, city and month." width="1920" height="1080"><figcaption>The Power BI dashboard.</figcaption></figure>
 
-<h3>The Data</h3>
+<h3>The data</h3>
 <p>Three tables: Customers, Products and Transactions. Product ID links Transactions to Products, and Customer ID links Transactions to Customers. I merged all three into one sheet so every sale carried its price, product, customer, city and customer type.</p>
 
 <h3>How I cleaned it</h3>
@@ -91,7 +99,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 <li>Added a Month column with the TEXT function so I could study monthly sales.</li>
 </ol>
 
-<h3>What the Data shows</h3>
+<h3>What the data shows</h3>
 <div class="chart" role="img" aria-label="Revenue by product: Monitor 7,992,000 is highest, Mouse 235,200 is lowest.">
 <b>Revenue by product</b>
 <div class="bar"><span>Monitor</span><i style="width:100%"></i><span>7,992,000</span></div>
@@ -177,6 +185,41 @@ from transactions as t
 join products as p on t.product_id = p.product_id;</pre>
 <p class="say">The average sale is about 291,028.</p>
 <img src="sql-q5.png" alt="Query result: average transaction value" loading="lazy"></details>
+</div></section>
+
+<section id="cv"><div class="wrap">
+<h2>CV</h2>
+<p>A quick look at my background. Download the full CV as a PDF to read or share.</p>
+<div class="cv-actions"><a class="btn" href="cv.pdf" download>Download CV (PDF)</a><a class="btn alt" href="cv.pdf" target="_blank" rel="noopener">Open in a new tab</a></div>
+<div class="cv-card">
+<h3>Professional summary</h3>
+<p>Data Analyst with hands-on experience in Excel, Google Sheets, SQL (PostgreSQL) and Power BI. I clean and merge messy data, query it with SQL, and present the results in dashboards and plain-language reports that help people make decisions.</p>
+<h3>Skills</h3>
+<p><b>Tools:</b> Excel, Google Sheets, SQL (PostgreSQL), Power BI</p>
+<p><b>Data Analytics Skills:</b> Data cleaning and preparation, data analysis, data visualization, dashboard design, KPI and trend analysis, SQL querying (joins, GROUP BY, aggregations), pivot tables, reporting and insight writing</p>
+<p><b>Professional Skills:</b> Analytical thinking, problem solving, attention to detail, data storytelling, clear written communication</p>
+<p><b>Languages:</b> English, Yoruba</p>
+<h3>Experience</h3>
+<h4>Data Analyst, Techbridge</h4>
+<ul>
+<li>Gained hands-on data analysis experience on real business datasets, taking raw records through cleaning, analysis and reporting to clear findings and recommendations.</li>
+<li>Cleaned and merged three datasets (customers, products and transactions) using VLOOKUP, and flagged records with missing matches so they did not distort totals.</li>
+<li>Wrote PostgreSQL queries using joins, GROUP BY, SUM and AVG to measure revenue by product, category, customer, city and customer type.</li>
+<li>Used Power BI to tell clear data stories, turning sales data into dashboards that make insights easy to understand.</li>
+</ul>
+<h4>Data Analyst, DecodeLabs</h4>
+<ul>
+<li>Applied Excel, Google Sheets and Power BI to clean and analyze real datasets.</li>
+<li>Cleaned and standardized messy data in Google Sheets, fixing inconsistent text casing, duplicate records, phone number formats and mixed date formats.</li>
+<li>Used Excel and Google Sheets formulas to summarize data and answer business questions.</li>
+<li>Built Power BI dashboards to show key numbers and trends in a clear, easy-to-read way.</li>
+<li>Wrote plain-language summaries of findings for readers without a technical background.</li>
+</ul>
+<h3>Certifications</h3>
+<ul><li><b>Data Analyst Internship Certificate</b>, DecodeLabs</li><li><b>Data Analyst Internship Certificate</b>, Techbridge Services</li></ul>
+<h3>Education</h3>
+<p><b>B.A. English and French</b>, University of Ibadan</p>
+</div>
 </div></section>
 
 <section id="contact"><div class="wrap">
