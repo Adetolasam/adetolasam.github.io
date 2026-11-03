@@ -19,7 +19,7 @@ nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--p
 nav .wrap{display:flex;gap:20px;align-items:center;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
 nav strong{margin-right:auto}nav a{text-decoration:none;color:var(--ink)}nav a:hover{color:var(--teal)}
 .hero{padding:60px 0 44px}.hero h1{font-size:clamp(2rem,5vw,3.2rem);max-width:18ch}
-.lead{font-size:1.15rem;color:var(--muted);max-width:58ch;margin:18px 0 0}
+.lead{font-size:1.15rem;color:var(--muted);max-width:64ch;margin:18px 0 0}
 .chips{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none;margin:20px 0 0}
 .chips li{background:var(--soft);padding:5px 14px;border-radius:99px;font-weight:500;font-size:.95rem}
 section{padding:46px 0;border-top:1px solid var(--line)}
@@ -46,29 +46,19 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 @media(max-width:560px){.bar{grid-template-columns:92px 1fr 80px;font-size:.85rem}}
 .btn{display:inline-block;background:var(--teal);color:#fff;padding:10px 20px;border-radius:4px;font-weight:600;text-decoration:none;border:2px solid var(--teal)}
 .btn:hover{background:#17565d}.btn.alt{background:transparent;color:var(--teal)}.btn.alt:hover{background:var(--teal);color:#fff}
-.cv-actions{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 8px}
-.cv-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:8px 24px 18px}
-.cv-card h3{margin:22px 0 6px;font-size:1.15rem;color:var(--teal)}
-.cv-card h4{margin:14px 0 2px;font-size:1.02rem}.cv-card ul{margin:4px 0;padding-left:1.2rem}
-.cv-card p{margin:6px 0}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><strong>Adetola Temitope Samuel</strong><a href="#about">About</a><a href="#project">Project</a><a href="#sql">SQL work</a><a href="#cv">CV</a><a href="#contact">Contact</a></div></nav>
+<nav><div class="wrap"><strong>Adetola Temitope Samuel</strong><a href="#project">Project</a><a href="#sql">SQL work</a><a href="cv.pdf" download>CV</a><a href="#contact">Contact</a></div></nav>
 
 <header class="hero"><div class="wrap">
-<h1>I turn Sales Data into clear decisions.</h1>
-<p class="lead">I am a Data Analyst in Lagos, Nigeria. I clean messy data, query it with SQL, and show the answers in Excel and Power BI dashboards that anyone can read at a glance.</p>
+<h1>About Me</h1>
+<p class="lead">I am a Data Analyst in Lagos, Nigeria, currently working at Techbridge and earlier at DecodeLabs. I clean messy data, query it with SQL, and show the answers in Excel and Power BI dashboards that anyone can read at a glance. I hold a B.A. from the University of Ibadan, I explain numbers in plain words, and I speak English and Yoruba.</p>
 <ul class="chips"><li>Excel and Google Sheets</li><li>SQL (PostgreSQL)</li><li>Power BI</li><li>Data cleaning</li><li>Dashboards and reporting</li></ul>
 <p style="margin-top:22px"><a class="btn" href="cv.pdf" download>Download my CV</a></p>
 </div></header>
 
 <main>
-<section id="about"><div class="wrap">
-<h2>About me</h2>
-<p>I work as a Data Analyst at Techbridge, and I earlier worked as a Data Analyst at DecodeLabs. I hold a B.A. in English and French from the University of Ibadan, which helps me explain numbers in plain words. I speak English, Yoruba and French.</p>
-</div></section>
-
 <section id="project"><div class="wrap">
 <h2>Retail Sales Performance Analysis</h2>
 <p class="note">Techbridge Services, Task 8. Sample sales data, January to June 2026. Tools: Excel and Google Sheets, PostgreSQL, Power BI.</p>
@@ -187,49 +177,9 @@ join products as p on t.product_id = p.product_id;</pre>
 <img src="sql-q5.png" alt="Query result: average transaction value" loading="lazy"></details>
 </div></section>
 
-<section id="cv"><div class="wrap">
-<h2>CV</h2>
-<p>A quick look at my background. Download the full CV as a PDF to read or share.</p>
-<div class="cv-actions"><a class="btn" href="cv.pdf" download>Download CV (PDF)</a><a class="btn alt" href="cv.pdf" target="_blank" rel="noopener">Open in a new tab</a></div>
-<div class="cv-card">
-<h3>Professional summary</h3>
-<p>Data Analyst with hands-on experience in Excel, Google Sheets, SQL (PostgreSQL) and Power BI. I clean and merge messy data, query it with SQL, and present the results in dashboards and plain-language reports that help people make decisions.</p>
-<h3>Skills</h3>
-<p><b>Tools:</b> Excel, Google Sheets, SQL (PostgreSQL), Power BI</p>
-<p><b>Data Analytics Skills:</b> Data cleaning and preparation, data analysis, data visualization, dashboard design, KPI and trend analysis, SQL querying (joins, GROUP BY, aggregations), pivot tables, reporting and insight writing</p>
-<p><b>Professional Skills:</b> Analytical thinking, problem solving, attention to detail, data storytelling, clear written communication</p>
-<p><b>Languages:</b> English, Yoruba</p>
-<h3>Experience</h3>
-<h4>Data Analyst, Techbridge</h4>
-<ul>
-<li>Gained hands-on data analysis experience on real business datasets, taking raw records through cleaning, analysis and reporting to clear findings and recommendations.</li>
-<li>Cleaned and merged three datasets (customers, products and transactions) using VLOOKUP, and flagged records with missing matches so they did not distort totals.</li>
-<li>Wrote PostgreSQL queries using joins, GROUP BY, SUM and AVG to measure revenue by product, category, customer, city and customer type.</li>
-<li>Used Power BI to tell clear data stories, turning sales data into dashboards that make insights easy to understand.</li>
-</ul>
-<h4>Data Analyst, DecodeLabs</h4>
-<ul>
-<li>Applied Excel, Google Sheets and Power BI to clean and analyze real datasets.</li>
-<li>Cleaned and standardized messy data in Google Sheets, fixing inconsistent text casing, duplicate records, phone number formats and mixed date formats.</li>
-<li>Used Excel and Google Sheets formulas to summarize data and answer business questions.</li>
-<li>Built Power BI dashboards to show key numbers and trends in a clear, easy-to-read way.</li>
-<li>Wrote plain-language summaries of findings for readers without a technical background.</li>
-</ul>
-<h3>Certifications</h3>
-<ul><li><b>Data Analyst Internship Certificate</b>, DecodeLabs</li><li><b>Data Analyst Internship Certificate</b>, Techbridge Services</li></ul>
-<h3>Education</h3>
-<p><b>B.A. English and French</b>, University of Ibadan</p>
-</div>
-</div></section>
-
 <section id="contact"><div class="wrap">
 <h2>Contact</h2>
 <p>I am open to Data Analyst roles and Freelance projects. Write to me at <a href="mailto:temitopeadetola48@gmail.com">temitopeadetola48@gmail.com</a> or find me on <a href="https://www.linkedin.com/in/samuel-adetola-temitope-9a094b239/">LinkedIn</a>.</p>
-</div></section>
-<section id="cv-download"><div class="wrap">
-<h2>Download my CV</h2>
-<p>Want the full picture on one page? Download my CV as a PDF to read, print or share.</p>
-<div class="cv-actions"><a class="btn" href="cv.pdf" download>Download CV (PDF)</a><a class="btn alt" href="cv.pdf" target="_blank" rel="noopener">Open in a new tab</a></div>
 </div></section>
 </main>
 <footer><div class="wrap">Adetola Temitope Samuel, Lagos, Nigeria</div></footer>
