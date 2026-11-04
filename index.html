@@ -46,137 +46,20 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 @media(max-width:560px){.bar{grid-template-columns:92px 1fr 80px;font-size:.85rem}}
 .btn{display:inline-block;background:var(--teal);color:#fff;padding:10px 20px;border-radius:4px;font-weight:600;text-decoration:none;border:2px solid var(--teal)}
 .btn:hover{background:#17565d}.btn.alt{background:transparent;color:var(--teal)}.btn.alt:hover{background:var(--teal);color:#fff}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><strong>Adetola Temitope Samuel</strong><a href="#project">Project</a><a href="#sql">SQL work</a><a href="cv.pdf" download>CV</a><a href="#contact">Contact</a></div></nav>
+<nav><div class="wrap"><strong>Adetola Temitope Samuel</strong><a href="projects.html">Projects</a><a href="#contact">Contact</a></div></nav>
 
 <header class="hero"><div class="wrap">
 <h1>About Me</h1>
-<p class="lead">I am a Data Analyst in Lagos, Nigeria, I recently concluded my Internship at Techbridge Services and earlier at DecodeLabs. I clean messy data, query it with SQL, and show the answers in Excel and Power BI dashboards that anyone can read at a glance. I hold a B.A. from the University of Ibadan, I explain numbers in plain words, and I speak English and Yoruba.</p>
+<p class="lead">I am a Data Analyst in Lagos, Nigeria, currently working at Techbridge and earlier at DecodeLabs. I clean messy data, query it with SQL, and show the answers in Excel and Power BI dashboards that anyone can read at a glance. I hold a B.A. from the University of Ibadan, I explain numbers in plain words, and I speak English and Yoruba.</p>
 <ul class="chips"><li>Excel and Google Sheets</li><li>SQL (PostgreSQL)</li><li>Power BI</li><li>Data cleaning</li><li>Dashboards and reporting</li></ul>
-<p style="margin-top:22px"><a class="btn" href="cv.pdf" download>Download my CV</a></p>
+<div class="cta"><a class="btn" href="cv.pdf" download="Adetola-Temitope-Samuel-CV.pdf">Download my CV</a><a class="btn alt" href="projects.html">View my projects</a></div>
 </div></header>
 
 <main>
-<section id="project"><div class="wrap">
-<h2>Retail Sales Performance Analysis</h2>
-<p class="note">Techbridge Services, Task 8. Sample sales data, January to June 2026. Tools: Excel and Google Sheets, PostgreSQL, Power BI.</p>
-
-<h3>The questions</h3>
-<p>How much money did the business make? Which products, categories, cities and customers brought in the most? Which type of customer buys the most? How did sales move month by month?</p>
-
-<ul class="kpis">
-<li><b>43,363,200</b><span>total revenue after discounts</span></li>
-<li><b>149</b><span>transactions</span></li>
-<li><b>450</b><span>units sold</span></li>
-<li><b>291,028</b><span>average sale</span></li>
-</ul>
-
-<figure><img src="dashboard.png" alt="Sales dashboard with four key numbers, revenue by product, category, city and month." width="1920" height="1080"><figcaption>The Power BI dashboard.</figcaption></figure>
-
-<h3>The Data</h3>
-<p>Three tables: Customers, Products and Transactions. Product ID links Transactions to Products, and Customer ID links Transactions to Customers. I merged all three into one sheet so every sale carried its price, product, customer, city and customer type.</p>
-
-<h3>How I cleaned it</h3>
-<ol>
-<li>Merged the three sheets with VLOOKUP, and used IFERROR to label missing matches as "NOT FOUND".</li>
-<li>Found one sale whose customer is not in the customer list. It is kept in revenue and shown as "NOT FOUND".</li>
-<li>Found one sale whose product is not in the product list, so its price and revenue could not be worked out. I left it out of every total.</li>
-<li>Trimmed a stray double space in one column.</li>
-<li>Corrected one order with a negative quantity, because a quantity cannot be below zero.</li>
-<li>Calculated revenue as quantity × unit price, then took off the discount to get Total Revenue.</li>
-<li>Added a Month column with the TEXT function so I could study monthly sales.</li>
-</ol>
-
-<h3>What the Data shows</h3>
-<div class="chart" role="img" aria-label="Revenue by product: Monitor 7,992,000 is highest, Mouse 235,200 is lowest.">
-<b>Revenue by product</b>
-<div class="bar"><span>Monitor</span><i style="width:100%"></i><span>7,992,000</span></div>
-<div class="bar"><span>Printer</span><i style="width:88.9%"></i><span>7,104,000</span></div>
-<div class="bar"><span>Laptop</span><i style="width:82.2%"></i><span>6,570,000</span></div>
-<div class="bar"><span>Tablet</span><i style="width:81.5%"></i><span>6,512,000</span></div>
-<div class="bar"><span>Desk</span><i style="width:77.3%"></i><span>6,174,000</span></div>
-<div class="bar lo"><span>External Drive</span><i style="width:55.2%"></i><span>4,410,000</span></div>
-<div class="bar lo"><span>Headset</span><i style="width:23.1%"></i><span>1,850,000</span></div>
-<div class="bar lo"><span>Office Chair</span><i style="width:17.6%"></i><span>1,406,000</span></div>
-<div class="bar lo"><span>Keyboard</span><i style="width:13.9%"></i><span>1,110,000</span></div>
-<div class="bar lo"><span>Mouse</span><i style="width:2.9%"></i><span>235,200</span></div>
-</div>
-<ol>
-<li><b>Electronics makes the most money.</b> It earned 25,484,000 (58.8%), more than the other three categories combined. Monitor, Printer, Laptop and Tablet alone bring in about 65%.</li>
-<li><b>Three cities bring in nearly half.</b> Kano (7,222,000), Abuja (7,071,000) and Lagos (6,473,250) make up about 48%. Lagos has the most sales (21), but its average sale (308,250) is lower than Kano's (451,375).</li>
-<li><b>Sales rise and fall by month.</b> January (9,642,250), May (9,167,500) and March (8,660,250) were strong. February, April and June were near 5,300,000. The number of sales stayed near 25 a month, so the swings come from the size of the orders.</li>
-<li><b>Cheap items sell a lot but earn little.</b> Accessories are 40% of the items sold but only 7.4% of the money.</li>
-<li><b>Customer types:</b> Retail earned 23,975,850 (55.3%), Corporate 16,320,350 (37.6%) and Wholesale 2,617,000 (6.0%). Wholesale buyers purchase often but spend only about 90,241 a time.</li>
-<li><b>A few customers matter a lot.</b> The top five bring in 19,000,000 (43.8%), led by Ibrahim Sani (Abuja) with 4,716,000.</li>
-</ol>
-
-<h3>What I would recommend</h3>
-<ol>
-<li>Keep Monitors, Printers, Laptops and Tablets well stocked and promote them most.</li>
-<li>Sell accessories together with big items to raise the value of each order.</li>
-<li>Run offers in February, April and June to lift the slow months.</li>
-<li>Reward the top customers and keep finding new ones.</li>
-<li>Look at wholesale prices and the products wholesale buyers choose.</li>
-</ol>
-<div class="links"><a href="report.pdf">Read the full report</a><a href="sales-analysis.xlsx">Excel workbook</a><a href="sales-queries.sql">All SQL queries</a></div>
-</div></section>
-
-<section id="sql"><div class="wrap">
-<h2>SQL work</h2>
-<p>I used PostgreSQL to answer five business questions. Each query joins the tables, groups the rows and adds up revenue as quantity × unit price × (1 − discount). I used an inner join, so the two sales with unknown codes are left out of some results. Tap a question to see the query and its result.</p>
-
-<details><summary>1. What is the total revenue of each product?</summary>
-<pre>select p.product_name, p.product_id,
-sum(t.quantity * p.unit_price * (1 - t.discount)) as total_revenue
-from transactions as t
-join products as p on t.product_id = p.product_id
-group by p.product_name, p.product_id
-order by total_revenue desc;</pre>
-<p class="say">Monitor leads with 7,992,000, then Printer with 7,104,000. Mouse is lowest with 235,200.</p>
-<img src="sql-q1.png" alt="Query result: revenue by product" loading="lazy"></details>
-
-<details><summary>2. Which product category earned the most?</summary>
-<pre>select p.category,
-sum(t.quantity * p.unit_price * (1 - t.discount)) as total_revenue
-from transactions as t
-join products as p on t.product_id = p.product_id
-group by p.category
-order by total_revenue desc;</pre>
-<p class="say">Electronics earned 25,484,000. Accessories earned the least, 3,195,200.</p>
-<img src="sql-q2.png" alt="Query result: revenue by category" loading="lazy"></details>
-
-<details><summary>3. Which customers brought in the most revenue?</summary>
-<pre>select c.customer_name, c.customer_id,
-sum(t.quantity * p.unit_price * (1 - t.discount)) as total_revenue
-from transactions as t
-join customers as c on t.customer_id = c.customer_id
-join products as p on t.product_id = p.product_id
-group by c.customer_name, c.customer_id
-order by total_revenue desc;</pre>
-<p class="say">Ibrahim Sani is first with 4,716,000, then Hauwa Ali with 3,768,000 and Tunde Adebayo with 3,726,000. Kelvin George is lowest with 109,600.</p>
-<img src="sql-q3.png" alt="Query result: revenue by customer" loading="lazy"></details>
-
-<details><summary>4. Which city earned the most?</summary>
-<pre>select c.city,
-sum(t.quantity * p.unit_price * (1 - t.discount)) as total_revenue
-from transactions as t
-join customers as c on t.customer_id = c.customer_id
-join products as p on t.product_id = p.product_id
-group by c.city
-order by total_revenue desc;</pre>
-<p class="say">Kano earned 7,222,000. Enugu earned the least, 125,600.</p>
-<img src="sql-q4.png" alt="Query result: revenue by city" loading="lazy"></details>
-
-<details><summary>5. What is the average transaction value?</summary>
-<pre>select avg(t.quantity * p.unit_price * (1 - t.discount)) as avg_transaction_value
-from transactions as t
-join products as p on t.product_id = p.product_id;</pre>
-<p class="say">The average sale is about 291,028.</p>
-<img src="sql-q5.png" alt="Query result: average transaction value" loading="lazy"></details>
-</div></section>
-
 <section id="contact"><div class="wrap">
 <h2>Contact</h2>
 <p>I am open to Data Analyst roles and Freelance projects. Write to me at <a href="mailto:temitopeadetola48@gmail.com">temitopeadetola48@gmail.com</a> or find me on <a href="https://www.linkedin.com/in/samuel-adetola-temitope-9a094b239/">LinkedIn</a>.</p>
