@@ -50,6 +50,18 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 .name-block{margin:0 0 12px;font-weight:700;font-size:clamp(1.6rem,4.8vw,2.8rem);line-height:1.15;letter-spacing:.08em;color:var(--teal)}
 .lead.sm{font-size:1.04rem;margin-top:14px}
+.contact{background:var(--teal);color:#fff;border-top:0;padding:56px 0 60px}
+.contact h2{color:#fff;font-size:2rem}
+.c-lead{max-width:62ch;margin:0 0 26px;color:#fff;font-size:1.08rem}
+.c-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.c-card{background:#fff;color:var(--ink);border-radius:8px;padding:24px 26px;box-shadow:0 6px 18px rgba(8,40,45,.22)}
+.c-card svg{color:var(--teal);display:block}
+.c-card h3{margin:12px 0 6px;font-size:1.3rem}
+.c-card p{margin:0 0 18px;color:var(--muted);overflow-wrap:break-word}
+.c-card p a{color:var(--teal);font-weight:600}
+.c-card .btn:hover{background:#0f4a52;border-color:#0f4a52}
+.c-loc{margin:24px 0 0;color:#fff;font-weight:500}
+@media(max-width:420px){.c-card{padding:22px 20px}.c-card p a{font-size:.88rem}}
 </style>
 </head>
 <body>
@@ -71,9 +83,24 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 </div></header>
 
 <main>
-<section id="contact"><div class="wrap">
+<section id="contact" class="contact"><div class="wrap">
 <h2>Contact</h2>
-<p>I am open to Data Analyst roles and Freelance projects. Write to me at <a href="mailto:temitopeadetola48@gmail.com">temitopeadetola48@gmail.com</a> or find me on <a href="https://www.linkedin.com/in/samuel-adetola-temitope-9a094b239/">LinkedIn</a>.</p>
+<p class="c-lead">I am open to Data Analyst roles, Freelance projects and collaborations on data-driven work. If you have a dataset to explore, a business question to answer or an opportunity to discuss, I would be glad to hear from you.</p>
+<div class="c-grid">
+<div class="c-card">
+<svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+<h3>Email</h3>
+<p><a href="mailto:temitopeadetola48@gmail.com">temitopeadetola48@gmail.com</a></p>
+<a class="btn" href="mailto:temitopeadetola48@gmail.com">Send an email</a>
+</div>
+<div class="c-card">
+<svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5m0 2.5c0-2.7 4-3.2 4 0V16"/></svg>
+<h3>LinkedIn</h3>
+<p>Let us connect and talk about data.</p>
+<a class="btn" href="https://www.linkedin.com/in/samuel-adetola-temitope-9a094b239/" target="_blank" rel="noopener">View my profile</a>
+</div>
+</div>
+<p class="c-loc">Based in Lagos, Nigeria</p>
 </div></section>
 </main>
 <footer><div class="wrap">Adetola Temitope Samuel, Lagos, Nigeria</div></footer>
