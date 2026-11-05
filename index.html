@@ -17,8 +17,8 @@ a{color:var(--teal)}a:focus-visible,summary:focus-visible{outline:3px solid var(
 .wrap{max-width:900px;margin:0 auto;padding:0 22px}
 h1,h2,h3{font-family:"Newsreader",Georgia,serif;line-height:1.2;margin:0}
 nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:5}
-nav .wrap{display:flex;gap:20px;align-items:center;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
-nav strong{margin-right:auto}nav a{text-decoration:none;color:var(--ink)}nav a:hover{color:var(--teal)}
+nav .wrap{display:flex;justify-content:flex-end;gap:20px;align-items:center;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--ink)}nav a:hover{color:var(--teal)}
 .hero{padding:60px 0 44px}.hero h1{font-size:clamp(2rem,5vw,3.2rem);max-width:18ch}
 .lead{font-size:1.15rem;color:var(--muted);max-width:64ch;margin:18px 0 0}
 .chips{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none;margin:20px 0 0}
@@ -60,12 +60,11 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 .c-card p{margin:0 0 18px;color:var(--muted);overflow-wrap:break-word}
 .c-card p a{color:var(--teal);font-weight:600}
 .c-card .btn:hover{background:#0f4a52;border-color:#0f4a52}
-.c-loc{margin:24px 0 0;color:#fff;font-weight:500}
 @media(max-width:420px){.c-card{padding:22px 20px}.c-card p a{font-size:.88rem}}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><strong>Adetola Temitope Samuel</strong><a href="cv.html">CV</a><a href="projects.html">Projects</a><a href="certifications.html">Certifications</a><a href="#contact">Contact</a></div></nav>
+<nav><div class="wrap"><a href="cv.html">CV</a><a href="projects.html">Projects</a><a href="certifications.html">Certifications</a><a href="#contact">Contact</a></div></nav>
 
 <header class="hero"><div class="wrap">
 <p class="name-block">ADETOLA TEMITOPE SAMUEL</p>
@@ -100,7 +99,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 <a class="btn" href="https://www.linkedin.com/in/samuel-adetola-temitope-9a094b239/" target="_blank" rel="noopener">View my profile</a>
 </div>
 </div>
-<p class="c-loc">Based in Lagos, Nigeria</p>
 </div></section>
 </main>
 <footer><div class="wrap">Adetola Temitope Samuel, Lagos, Nigeria</div></footer>
