@@ -46,17 +46,39 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 @media(max-width:560px){.bar{grid-template-columns:92px 1fr 80px;font-size:.85rem}}
 .btn{display:inline-block;background:var(--teal);color:#fff;padding:10px 20px;border-radius:4px;font-weight:600;text-decoration:none;border:2px solid var(--teal)}
 .btn:hover{background:#17565d}.btn.alt{background:transparent;color:var(--teal)}.btn.alt:hover{background:var(--teal);color:#fff}
+
+.proj-list{margin-top:6px}
+details.project{background:#fff;border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:8px;margin:18px 0;box-shadow:0 2px 10px rgba(20,35,43,.06)}
+details.project>summary{list-style:none;cursor:pointer;display:flex;gap:18px;align-items:center;justify-content:space-between;padding:22px 26px}
+details.project>summary::-webkit-details-marker{display:none}
+.p-head{display:block}
+.p-title{display:block;font-family:"Newsreader",Georgia,serif;font-size:1.55rem;font-weight:600;line-height:1.2}
+.p-meta{display:block;color:var(--muted);font-size:.92rem;margin-top:4px}
+.p-q{display:block;margin-top:8px;font-size:1rem}
+.p-toggle{flex:none;border:2px solid var(--teal);color:var(--teal);border-radius:4px;padding:7px 16px;font-weight:600;font-size:.95rem}
+.p-toggle .t-close{display:none}
+details[open].project .p-toggle .t-open{display:none}
+details[open].project .p-toggle .t-close{display:inline}
+details.project>summary:hover .p-toggle{background:var(--teal);color:#fff}
+.p-body{padding:4px 26px 30px;border-top:1px solid var(--line)}
+.p-body h3{color:var(--teal);font-size:1.2rem;margin:30px 0 8px}
+.p-body details{margin:10px 0}
+.p-body .kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+@media(max-width:560px){details.project>summary{flex-direction:column;align-items:flex-start}.p-body{padding:4px 18px 26px}}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="index.html">Home</a><a href="#project">Sales project</a><a href="#sql">SQL work</a><a href="#recommendations">Recommendations</a><a href="index.html#contact">Contact</a></div></nav>
+<nav><div class="wrap"><a href="index.html">Home</a><a href="cv.html">CV</a><a href="certifications.html">Certifications</a><a href="index.html#contact">Contact</a></div></nav>
 
-<header class="hero" style="padding-bottom:20px"><div class="wrap"><h1>Projects</h1><p class="lead">A collection of my data analysis work. More projects will be added here.</p><p style="margin-top:18px"><a class="btn alt" href="index.html">Back to home</a></p></div></header>
-<main>
-<section id="project"><div class="wrap">
-<h2>Retail Sales Performance Analysis</h2>
-<p class="note">Techbridge Services, Task 8. Sample sales data, January to June 2026. Tools: Excel and Google Sheets, PostgreSQL, Power BI.</p>
+<header class="hero" style="padding-bottom:10px"><div class="wrap">
+<h1>Projects</h1>
+<p class="lead">Select a project to read more.</p>
+</div></header>
 
+<main><div class="wrap proj-list">
+<details class="project" id="sales-project">
+<summary><span class="p-head"><span class="p-title">Retail Sales Performance Analysis</span><span class="p-meta">Techbridge Services, Task 8 | Excel, SQL, Power BI</span><span class="p-q">Which products, cities and customers drive revenue, and when do sales rise and fall?</span></span><span class="p-toggle"><span class="t-open">View project</span><span class="t-close">Close</span></span></summary>
+<div class="p-body">
 <h3>The questions</h3>
 <ol>
 <li>How much money did the business make?</li>
@@ -111,10 +133,9 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 <li><b>A few customers matter a lot.</b> The top five bring in 19,000,000 (43.8%), led by Ibrahim Sani (Abuja) with 4,716,000.</li>
 </ol>
 
-</div></section>
 
-<section id="sql"><div class="wrap">
-<h2>SQL work</h2>
+
+<h3>SQL work</h3>
 <p>I used PostgreSQL to answer five business questions. Each query joins the tables, groups the rows and adds up revenue as quantity × unit price × (1 − discount). I used an inner join, so the two sales with unknown codes are left out of some results. Tap a question to see the query and its result.</p>
 
 <details><summary>1. What is the total revenue of each product?</summary>
@@ -165,10 +186,9 @@ from transactions as t
 join products as p on t.product_id = p.product_id;</pre>
 <p class="say">The average sale is about 291,028.</p>
 <img src="sql-q5.png" alt="Query result: average transaction value" loading="lazy"></details>
-</div></section>
 
-<section id="recommendations"><div class="wrap">
-<h2>Recommendations</h2>
+
+<h3>Recommendations</h3>
 <ol>
 <li>Keep Monitors, Printers, Laptops and Tablets well stocked and promote them most.</li>
 <li>Sell accessories together with big items to raise the value of each order.</li>
@@ -177,8 +197,59 @@ join products as p on t.product_id = p.product_id;</pre>
 <li>Look at wholesale prices and the products wholesale buyers choose.</li>
 </ol>
 <div class="links"><a href="report.pdf" target="_blank" rel="noopener">Read the full report</a><a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fadetolasam.github.io%2Fsales-analysis.xlsx" target="_blank" rel="noopener">Excel workbook</a><a href="https://github.com/Adetolasam/adetolasam.github.io/blob/main/sales-queries.sql" target="_blank" rel="noopener">All SQL queries</a></div>
-</div></section>
-</main>
+
+</div>
+</details>
+
+<details class="project" id="hr-project">
+<summary><span class="p-head"><span class="p-title">HR Employee Turnover Analysis</span><span class="p-meta">Techbridge Services, Task 7 | Spreadsheet analysis, Power BI</span><span class="p-q">Which groups of employees leave the company the most?</span></span><span class="p-toggle"><span class="t-open">View project</span><span class="t-close">Close</span></span></summary>
+<div class="p-body">
+<h3>The questions</h3>
+<ol>
+<li>How many employees left the company, and what share is that?</li>
+<li>Which departments lose the most people?</li>
+<li>Does job satisfaction affect who leaves?</li>
+<li>Does salary level affect who leaves?</li>
+</ol>
+
+<ul class="kpis">
+<li><b>11,991</b><span>employees analyzed</span></li>
+<li><b>1,991</b><span>employees who left</span></li>
+<li><b>16.6%</b><span>turnover rate, about 1 in every 6 people</span></li>
+<li><b>10</b><span>departments</span></li>
+</ul>
+
+<figure><img src="hr-turnover-dashboard.png" alt="HR turnover dashboard with turnover by department, satisfaction level and salary level, and average monthly hours." width="2200" height="1920" loading="lazy"><figcaption>The HR turnover dashboard.</figcaption></figure>
+
+<h3>The Data</h3>
+<p>14,999 employee records. For each person the data shows job satisfaction, last evaluation score, number of projects, average monthly hours, years at the company, work accident, promotion in the last five years, department, salary level, and whether the person left or stayed.</p>
+
+<h3>How I cleaned it</h3>
+<ol>
+<li>Removed 3,008 duplicate records, which left 11,991 unique employees.</li>
+<li>Standardized the capital letters in the Department and Salary columns.</li>
+<li>Added helper columns: employee status (Stayed or Left), satisfaction category (Low below 0.50, Medium 0.50 to 0.74, High 0.75 and above), workload category and promotion status, so groups could be compared.</li>
+</ol>
+
+<h3>What the Data shows</h3>
+<ol>
+<li><b>Unhappy employees leave the most.</b> Employees with low satisfaction left at a rate of 44.35%, against 2.97% for medium and 10.07% for high satisfaction.</li>
+<li><b>Lower pay means more people leave.</b> The turnover rate is 20.45% for low salaries, 14.62% for medium and 4.85% for high.</li>
+<li><b>HR loses the most people and Management the fewest.</b> HR is at 18.80% and Accounting at 17.55%, while Management is at 11.93% and R&amp;D at 12.25%. Most departments sit between 16% and 19%.</li>
+</ol>
+<p class="say">People mostly leave because they are unhappy or underpaid, not because of the team they work in.</p>
+
+<h3>Recommendations</h3>
+<ol>
+<li>Focus first on low-satisfaction and low-paid employees, and ask them what is wrong.</li>
+<li>Review salaries, starting with the lowest-paid roles, to check that pay is fair.</li>
+<li>Find out why HR loses more people, and learn from what Management does well.</li>
+<li>Identify the main reasons employees leave and make staff feel valued, to cut hiring costs and build a more stable workforce.</li>
+</ol>
+<div class="links"><a href="hr-turnover-report.pdf" target="_blank" rel="noopener">Read the report</a><a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fadetolasam.github.io%2Fhr-turnover-workbook.xlsx" target="_blank" rel="noopener">Open the workbook</a></div>
+</div>
+</details>
+</div></main>
 <footer><div class="wrap">Adetola Temitope Samuel, Lagos, Nigeria</div></footer>
 </body>
 </html>
