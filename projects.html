@@ -65,18 +65,74 @@ details.project>summary:hover .p-toggle{background:var(--teal);color:#fff}
 .p-body details{margin:10px 0}
 .p-body .kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
 @media(max-width:560px){details.project>summary{flex-direction:column;align-items:flex-start}.p-body{padding:4px 18px 26px}}
+
+/* ===== 3D MOTION (start) ===== */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,#1f6f78,#8dbac0);transform-origin:0 50%;transform:scaleX(var(--p,0));z-index:50;pointer-events:none}
+nav{backdrop-filter:blur(8px);background:rgba(245,248,247,.92)}
+nav a{position:relative}
+nav a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--teal);transform:scaleX(0);transition:transform .25s}
+nav a:hover::after{transform:scaleX(1)}
+.btn,.links a{transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease}
+.btn:hover,.links a:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(31,111,120,.28)}
+html.js .reveal{opacity:0;translate:0 26px;transition:opacity .75s ease,translate .75s cubic-bezier(.2,.7,.2,1)}
+html.js .reveal.in{opacity:1;translate:0 0}
+.tilt{position:relative;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.tilt:not(.reveal){transition:transform .25s ease-out,box-shadow .25s ease}
+html.js .reveal.tilt{transition:opacity .75s ease,translate .75s cubic-bezier(.2,.7,.2,1),transform .25s ease-out,box-shadow .25s ease}
+.tilt::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .25s ease;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(31,111,120,.16),transparent 58%)}
+.tilt.tilting::after{opacity:1}
+.tilt.tilting{box-shadow:0 20px 40px rgba(20,35,43,.2)}
+.hero{position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+.scene{position:absolute;inset:0;z-index:0;pointer-events:none}
+.shape{position:absolute;perspective:700px;translate:calc(var(--px,0)*var(--depth)*1px) calc((var(--py,0)*var(--depth) - var(--sy,0)*var(--depth)*.35)*1px)}
+.s1{right:5%;top:8%}.s2{right:20%;top:36%}.s3{right:3%;top:52%}.s4{right:27%;top:6%}.s5{right:9%;top:76%}
+.cube{--s:110px;width:var(--s);height:var(--s);position:relative;transform-style:preserve-3d;animation:cubeSpin 28s linear infinite}
+.cube.sm{--s:46px;animation-duration:18s;animation-direction:reverse}
+.cube i{position:absolute;inset:0;border:2px solid rgba(31,111,120,.6);background:linear-gradient(135deg,rgba(31,111,120,.22),rgba(156,195,199,.38))}
+.cube i:nth-child(1){transform:translateZ(calc(var(--s)/2))}
+.cube i:nth-child(2){transform:rotateY(90deg) translateZ(calc(var(--s)/2))}
+.cube i:nth-child(3){transform:rotateY(180deg) translateZ(calc(var(--s)/2))}
+.cube i:nth-child(4){transform:rotateY(-90deg) translateZ(calc(var(--s)/2))}
+.cube i:nth-child(5){transform:rotateX(90deg) translateZ(calc(var(--s)/2))}
+.cube i:nth-child(6){transform:rotateX(-90deg) translateZ(calc(var(--s)/2))}
+@keyframes cubeSpin{to{transform:rotateX(360deg) rotateY(360deg)}}
+.ring{width:130px;height:130px;border-radius:50%;border:9px solid rgba(31,111,120,.4);animation:ringSpin 20s linear infinite}
+@keyframes ringSpin{from{transform:rotateX(65deg) rotateZ(0)}to{transform:rotateX(65deg) rotateZ(360deg)}}
+.orb{width:70px;height:70px;border-radius:50%;background:radial-gradient(circle at 30% 28%,#e4f2f3,#8dbac0 38%,#1f6f78 78%);box-shadow:0 14px 26px rgba(31,111,120,.3);animation:bob 5s ease-in-out infinite alternate}
+.orb.lg{width:54px;height:54px;animation-duration:6.5s}
+@keyframes bob{from{transform:translateY(-12px)}to{transform:translateY(12px)}}
+@media(max-width:1500px){.s2,.s4{display:none}}
+@media(max-width:1100px){.scene{opacity:.3}}
+@media(max-width:820px){.cube{--s:80px}}
+@media(prefers-reduced-motion:reduce){
+.cube,.ring,.orb{animation:none}
+html.js .reveal{opacity:1!important;translate:none!important;transition:none!important}
+.tilt{transform:none!important}.shape{translate:none!important}.progress{display:none}
+.btn:hover,.links a:hover{transform:none}}
+/* ===== 3D MOTION (end) ===== */
 </style>
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
+<div class="progress" aria-hidden="true"></div>
 <nav><div class="wrap"><a href="index.html">Home</a><a href="cv.html">CV</a><a href="certifications.html">Certifications</a><a href="index.html#contact">Contact</a></div></nav>
 
-<header class="hero" style="padding-bottom:10px"><div class="wrap">
-<h1>Projects</h1>
-<p class="lead">Select a project to read more.</p>
+<header class="hero" style="padding-bottom:10px">
+<div class="scene" aria-hidden="true">
+<div class="shape s1" style="--depth:34"><div class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="shape s2" style="--depth:20"><div class="ring"></div></div>
+<div class="shape s3" style="--depth:46"><div class="orb"></div></div>
+<div class="shape s4" style="--depth:14"><div class="cube sm"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="shape s5" style="--depth:28"><div class="orb lg"></div></div>
+</div>
+<div class="wrap">
+<h1 class="reveal">Projects</h1>
+<p class="lead reveal">Select a project to read more.</p>
 </div></header>
 
 <main><div class="wrap proj-list">
-<details class="project" id="sales-project">
+<details class="project tilt reveal" id="sales-project">
 <summary><span class="p-head"><span class="p-title">Retail Sales Performance Analysis</span><span class="p-meta">Techbridge Services, Task 8 | Excel, SQL, Power BI</span><span class="p-q">Which products, cities and customers drive revenue, and when do sales rise and fall?</span></span><span class="p-toggle"><span class="t-open">View project</span><span class="t-close">Close</span></span></summary>
 <div class="p-body">
 <h3>The questions</h3>
@@ -88,13 +144,13 @@ details.project>summary:hover .p-toggle{background:var(--teal);color:#fff}
 </ol>
 
 <ul class="kpis">
-<li><b>43,363,200</b><span>total revenue after discounts</span></li>
-<li><b>149</b><span>transactions</span></li>
-<li><b>450</b><span>units sold</span></li>
-<li><b>291,028</b><span>average sale</span></li>
+<li class="tilt reveal"><b>43,363,200</b><span>total revenue after discounts</span></li>
+<li class="tilt reveal"><b>149</b><span>transactions</span></li>
+<li class="tilt reveal"><b>450</b><span>units sold</span></li>
+<li class="tilt reveal"><b>291,028</b><span>average sale</span></li>
 </ul>
 
-<figure><img src="dashboard.png" alt="Sales dashboard with four key numbers, revenue by product, category, city and month." width="2200" height="1920"><figcaption>The Power BI dashboard.</figcaption></figure>
+<figure class="tilt reveal"><img src="dashboard.png" alt="Sales dashboard with four key numbers, revenue by product, category, city and month." width="2200" height="1920"><figcaption>The Power BI dashboard.</figcaption></figure>
 
 <h3>The Data</h3>
 <p>Three tables: Customers, Products and Transactions. Product ID links Transactions to Products, and Customer ID links Transactions to Customers. I merged all three into one sheet so every sale carried its price, product, customer, city and customer type.</p>
@@ -111,7 +167,7 @@ details.project>summary:hover .p-toggle{background:var(--teal);color:#fff}
 </ol>
 
 <h3>What the Data shows</h3>
-<div class="chart" role="img" aria-label="Revenue by product: Monitor 7,992,000 is highest, Mouse 235,200 is lowest.">
+<div class="chart reveal" role="img" aria-label="Revenue by product: Monitor 7,992,000 is highest, Mouse 235,200 is lowest.">
 <b>Revenue by product</b>
 <div class="bar"><span>Monitor</span><i style="width:100%"></i><span>7,992,000</span></div>
 <div class="bar"><span>Printer</span><i style="width:88.9%"></i><span>7,104,000</span></div>
@@ -201,8 +257,8 @@ join products as p on t.product_id = p.product_id;</pre>
 </div>
 </details>
 
-<details class="project" id="hr-project">
-<summary><span class="p-head"><span class="p-title">HR Employee Turnover Analysis</span><span class="p-meta">Techbridge Services, Task 7 | Spreadsheet analysis, Power BI</span><span class="p-q">Which groups of employees leave the company the most?</span></span><span class="p-toggle"><span class="t-open">View project</span><span class="t-close">Close</span></span></summary>
+<details class="project tilt reveal" id="hr-project">
+<summary><span class="p-head"><span class="p-title">HR Employee Turnover Analysis</span><span class="p-meta">Techbridge Services, Task 7 | Google Sheets, Power BI</span><span class="p-q">Which groups of employees leave the company the most?</span></span><span class="p-toggle"><span class="t-open">View project</span><span class="t-close">Close</span></span></summary>
 <div class="p-body">
 <h3>The questions</h3>
 <ol>
@@ -213,13 +269,13 @@ join products as p on t.product_id = p.product_id;</pre>
 </ol>
 
 <ul class="kpis">
-<li><b>11,991</b><span>employees analyzed</span></li>
-<li><b>1,991</b><span>employees who left</span></li>
-<li><b>16.6%</b><span>turnover rate, about 1 in every 6 people</span></li>
-<li><b>10</b><span>departments</span></li>
+<li class="tilt reveal"><b>11,991</b><span>employees analyzed</span></li>
+<li class="tilt reveal"><b>1,991</b><span>employees who left</span></li>
+<li class="tilt reveal"><b>16.6%</b><span>turnover rate, about 1 in every 6 people</span></li>
+<li class="tilt reveal"><b>10</b><span>departments</span></li>
 </ul>
 
-<figure><img src="hr-turnover-dashboard.png" alt="HR turnover dashboard with turnover by department, satisfaction level and salary level, and average monthly hours." width="2200" height="1920" loading="lazy"><figcaption>The HR turnover dashboard.</figcaption></figure>
+<figure class="tilt reveal"><img src="hr-turnover-dashboard.png" alt="HR turnover dashboard with turnover by department, satisfaction level and salary level, and average monthly hours." width="2200" height="1920" loading="lazy"><figcaption>The HR turnover dashboard.</figcaption></figure>
 
 <h3>The Data</h3>
 <p>14,999 employee records. For each person the data shows job satisfaction, last evaluation score, number of projects, average monthly hours, years at the company, work accident, promotion in the last five years, department, salary level, and whether the person left or stayed.</p>
@@ -251,5 +307,69 @@ join products as p on t.product_id = p.product_id;</pre>
 </details>
 </div></main>
 <footer><div class="wrap">Adetola Temitope Samuel, Lagos, Nigeria</div></footer>
+<script>
+/* ===== 3D MOTION script (start) ===== */
+(function(){
+var d=document,r=d.documentElement;
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+var els=[].slice.call(d.querySelectorAll('.reveal'));
+function show(e){e.classList.add('in');setTimeout(function(){e.style.transitionDelay=''},1100)}
+if(rm||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}
+else{
+ var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -5% 0px'});
+ els.forEach(function(e,i){e.style.transitionDelay=((i%4)*80)+'ms';io.observe(e)});
+}
+function fmt(v,dec){return v.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec})}
+function count(el){
+ var t=el.textContent.trim(),m=t.match(/^([\d,]+(?:\.\d+)?)(%?)$/);
+ if(!m||rm)return;
+ var dec=(m[1].split('.')[1]||'').length,end=parseFloat(m[1].replace(/,/g,'')),sfx=m[2],t0=null,dur=1400;
+ function f(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-p,3);
+  el.textContent=fmt(end*e,dec)+sfx;if(p<1)requestAnimationFrame(f);else el.textContent=t}
+ requestAnimationFrame(f);
+}
+var nums=[].slice.call(d.querySelectorAll('.kpis b'));
+if(!rm&&'IntersectionObserver' in window){
+ var io2=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){count(x.target);io2.unobserve(x.target)}})},{threshold:.6});
+ nums.forEach(function(n){io2.observe(n)});
+}
+if(!rm&&fine){
+ [].forEach.call(d.querySelectorAll('.tilt'),function(el){
+  var raf;
+  function reset(){cancelAnimationFrame(raf);el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg');el.classList.remove('tilting')}
+  el.addEventListener('pointermove',function(e){
+   if(el.tagName==='DETAILS'&&el.open){return}
+   var b=el.getBoundingClientRect(),x=(e.clientX-b.left)/b.width,y=(e.clientY-b.top)/b.height;
+   cancelAnimationFrame(raf);
+   raf=requestAnimationFrame(function(){
+    el.style.setProperty('--ry',((x-.5)*10).toFixed(2)+'deg');
+    el.style.setProperty('--rx',((.5-y)*8).toFixed(2)+'deg');
+    el.style.setProperty('--mx',(x*100).toFixed(1)+'%');
+    el.style.setProperty('--my',(y*100).toFixed(1)+'%');
+    el.classList.add('tilting')});
+  });
+  el.addEventListener('pointerleave',reset);
+  if(el.tagName==='DETAILS'){el.addEventListener('toggle',reset)}
+ });
+}
+if(!rm){
+ var ticking=false;
+ function onScroll(){
+  if(ticking)return;ticking=true;
+  requestAnimationFrame(function(){
+   var y=window.pageYOffset||r.scrollTop,h=r.scrollHeight-window.innerHeight;
+   r.style.setProperty('--sy',(y/100).toFixed(3));
+   r.style.setProperty('--p',h>0?Math.min(y/h,1).toFixed(4):0);
+   ticking=false});
+ }
+ addEventListener('scroll',onScroll,{passive:true});onScroll();
+ if(fine){addEventListener('pointermove',function(e){
+  r.style.setProperty('--px',((e.clientX/innerWidth-.5)*2).toFixed(3));
+  r.style.setProperty('--py',((e.clientY/innerHeight-.5)*2).toFixed(3))},{passive:true})}
+}
+})();
+/* ===== 3D MOTION script (end) ===== */
+</script>
 </body>
 </html>
