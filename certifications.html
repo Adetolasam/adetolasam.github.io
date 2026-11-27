@@ -122,6 +122,19 @@ html.js .reveal{opacity:1!important;translate:none!important;transition:none!imp
 .f-grid a{color:var(--muted);text-decoration:none}.f-grid a:hover{color:var(--teal);text-decoration:underline}
 .f-base{margin:28px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:.88rem}
 @media(max-width:640px){.f-grid{grid-template-columns:1fr}}
+.skills{max-width:660px;margin-top:26px}
+.skills-label{margin:0 0 10px;color:var(--teal);font-weight:600;font-size:.95rem;letter-spacing:.02em}
+.skills .chips{margin:0 0 4px}
+.tools{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tool{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0}
+.tool .logo{flex:none;width:44px;height:44px;display:grid;place-items:center;background:#f1f6f6;border:1px solid rgba(20,35,43,.08);border-radius:10px;padding:8px}
+.tool .logo svg{width:100%;height:100%;display:block}
+.tinfo{display:flex;flex-direction:column;min-width:0;line-height:1.25}
+.tname{font-weight:600;color:var(--ink);font-size:.98rem}
+.tcat{color:var(--muted);font-size:.82rem}
+html[data-theme="dark"] .tool .logo{background:#eef3f3}
+@media(max-width:560px){.tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.thumb.fit{object-fit:contain;object-position:center;background:var(--soft)}
 /* ===== FEATURES (end) ===== */
 </style>
 <script>(function(){var r=document.documentElement,m='auto';try{m=localStorage.getItem('theme-mode')||'auto'}catch(e){}if(m!=='light'&&m!=='dark')m='auto';var h=new Date().getHours(),t=m==='auto'?(h>=6&&h<18?'light':'dark'):m;r.setAttribute('data-theme',t);r.setAttribute('data-mode',m);r.classList.add('js')})()</script>
@@ -145,9 +158,9 @@ html.js .reveal{opacity:1!important;translate:none!important;transition:none!imp
 <h2>Certificate</h2>
 <p>Data Analyst internship certificates.</p>
 <div class="docs">
-<div class="doc tilt reveal"><div class="thumb ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div><h3>Techbridge Services</h3><p>Data Analyst Internship Certificate</p>
+<div class="doc tilt reveal"><img class="thumb zoomable fit" src="certificate-techbridge-thumb.jpg" alt="Preview of the Techbridge internship certificate. Click to enlarge." width="1300" height="1005" loading="lazy"><h3>Techbridge Services</h3><p>Data Analyst Internship Certificate</p>
 <div class="links"><a href="certificate-techbridge.pdf" target="_blank" rel="noopener">View</a><a href="certificate-techbridge.pdf" download>Download</a></div></div>
-<div class="doc tilt reveal"><div class="thumb ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div><h3>DecodeLabs</h3><p>Data Analyst Internship Certificate</p>
+<div class="doc tilt reveal"><img class="thumb zoomable fit" src="certificate-decodelabs-thumb.jpg" alt="Preview of the DecodeLabs internship certificate. Click to enlarge." width="1300" height="919" loading="lazy"><h3>DecodeLabs</h3><p>Data Analyst Internship Certificate</p>
 <div class="links"><a href="certificate-decodelabs.pdf" target="_blank" rel="noopener">View</a><a href="certificate-decodelabs.pdf" download>Download</a></div></div>
 </div>
 </div></section>
@@ -156,7 +169,7 @@ html.js .reveal{opacity:1!important;translate:none!important;transition:none!imp
 <h2>LOR (Letter of Recommendation)</h2>
 <p>Letters of recommendation from my internships.</p>
 <div class="docs">
-<div class="doc tilt reveal"><div class="thumb ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div><h3>Techbridge Services</h3><p>Letter of Recommendation</p>
+<div class="doc tilt reveal"><img class="thumb zoomable" src="lor-techbridge-thumb.jpg" alt="Preview of the Techbridge letter of recommendation. Click to enlarge." width="1000" height="1295" loading="lazy"><h3>Techbridge Services</h3><p>Letter of Recommendation</p>
 <div class="links"><a href="lor-techbridge.pdf" target="_blank" rel="noopener">View</a><a href="lor-techbridge.pdf" download>Download</a></div></div>
 <div class="doc tilt reveal"><img class="thumb zoomable" src="lor-decodelabs-thumb.jpg" alt="Preview of the DecodeLabs letter of recommendation. Click to enlarge." width="794" height="1014" loading="lazy"><h3>DecodeLabs</h3><p>Letter of Recommendation</p>
 <div class="links"><a href="lor-decodelabs.pdf" target="_blank" rel="noopener">View</a><a href="lor-decodelabs.pdf" download>Download</a></div></div>
@@ -164,8 +177,12 @@ html.js .reveal{opacity:1!important;translate:none!important;transition:none!imp
 </div></section>
 <section id="quotes"><div class="wrap">
 <h2 class="reveal">What my supervisors say</h2>
-<p class="reveal">A line from each letter of recommendation, with the source.</p>
+<p class="reveal">One line from each letter of recommendation, with the source.</p>
 <div class="quotes">
+<figure class="quote-card tilt reveal">
+<blockquote>&ldquo;They showed a solid grasp of Data Analytics concepts and a genuine willingness to learn and improve throughout the program.&rdquo;</blockquote>
+<figcaption><b>TechBridge, Baselink Services Limited</b><br>Source: Letter of Recommendation from Prince James, Program Director, TechBridge, dated 3 November 2026. <a href="lor-techbridge.pdf" target="_blank" rel="noopener">Read the full letter</a></figcaption>
+</figure>
 <figure class="quote-card tilt reveal">
 <blockquote>&ldquo;His unwavering attention to detail and rigorous methodology were instrumental in the successful execution of several critical milestones, directly accelerating our core organizational objectives.&rdquo;</blockquote>
 <figcaption><b>DecodeLabs</b><br>Source: Letter of Recommendation, DecodeLabs, dated 4 November 2026, paragraph on the Data Analytics work. <a href="lor-decodelabs.pdf" target="_blank" rel="noopener">Read the full letter</a></figcaption>
